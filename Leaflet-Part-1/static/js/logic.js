@@ -57,8 +57,6 @@ d3.json(geojsonURL).then(function(data) {
             depths = [0, 100, 200, 300],
             labels = [];
 
-        div.innerHTML += "<h4>Depth (km)</h4>";
-
         // Loop through the depth intervals and generate a label with a colored square for each interval
         for (var i = 0; i < depths.length; i++) {
             div.innerHTML +=
