@@ -4,8 +4,10 @@ var myMap = L.map("map", {
     zoom: 2
 });
 
-// Add the base layer
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(myMap);
+// Add a tile layer.
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(myMap);
 
 // GeoJSON URL
 var geojsonURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson";
@@ -70,6 +72,3 @@ fetch(geojsonURL)
 
         legend.addTo(myMap);
     })
-    .catch(error => {
-        console.error("Error fetching the earthquake data:", error);
-    });
